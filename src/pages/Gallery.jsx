@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { assets, galleryImages } from "../assets/assets"; 
 import { FaTimes } from "react-icons/fa"; 
+import ScrollToTop from "../components/ScrollToTop";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -99,6 +100,7 @@ const Gallery = () => {
           />
         </motion.div>
       )}
+      <ScrollToTop />
     </div>
   );
 };

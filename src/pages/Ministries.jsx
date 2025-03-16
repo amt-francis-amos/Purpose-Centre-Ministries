@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { assets } from "../assets/assets";
+import ScrollToTop from "../components/ScrollToTop";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -168,6 +169,7 @@ const Ministries = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+      <ScrollToTop />
     </div>
   );
 };
