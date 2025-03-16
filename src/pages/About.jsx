@@ -138,7 +138,7 @@ const About = () => {
 
         
           <motion.a
-            href="/videos"
+            href="/virtual"
             className="inline-block mt-10 px-6 py-3 text-lg font-semibold text-white bg-amber-950 rounded-full shadow-lg hover:bg-amber-800 transition duration-300"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
