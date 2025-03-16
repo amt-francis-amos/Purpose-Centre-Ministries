@@ -16,7 +16,7 @@ const staggerContainer = {
 const VirtualChurch = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+     
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.churchBg})` }}
@@ -33,7 +33,7 @@ const VirtualChurch = () => {
           transition={{ duration: 1.5 }}
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-extrabold drop-shadow-lg"
+            className="text-2xl md:text-5xl font-extrabold drop-shadow-lg"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
@@ -83,7 +83,7 @@ const VirtualChurch = () => {
         </motion.div>
       </motion.div>
 
-      {/* Featured Sermons Section */}
+      
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20"
         variants={staggerContainer}
@@ -123,7 +123,8 @@ const VirtualChurch = () => {
 
         <div className="text-center mt-8">
           <motion.a
-            href="https://www.youtube.com/c/YOUR_CHURCH_YOUTUBE"
+            href="https://www.youtube.com/@purposecentreministries5530/videos
+            "
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-amber-950 text-white text-lg font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105"
@@ -135,7 +136,7 @@ const VirtualChurch = () => {
         </div>
       </motion.div>
 
-      {/* Join Our Community CTA */}
+    
       <motion.div
         className="bg-amber-950 text-white text-center py-12 mt-20"
         initial={{ opacity: 0 }}
