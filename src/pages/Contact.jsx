@@ -17,7 +17,7 @@ const staggerContainer = {
 const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+     
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.contactImg})` }}
@@ -43,7 +43,7 @@ const Contact = () => {
         </motion.div>
       </motion.div>
 
-      {/* Contact Info & Form Section */}
+      
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20 text-gray-700"
         variants={staggerContainer}
@@ -65,7 +65,7 @@ const Contact = () => {
           />
         </div>
 
-        {/* Contact Info */}
+      
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
           variants={fadeInUp}
@@ -89,7 +89,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Contact Form */}
+       
         <motion.div
           className="bg-white shadow-lg rounded-lg p-8 mt-16 max-w-3xl mx-auto"
           variants={fadeInUp}
@@ -124,7 +124,7 @@ const Contact = () => {
           </form>
         </motion.div>
 
-        {/* Google Map */}
+        
         <motion.div
           className="mt-16"
           initial={{ opacity: 0 }}
