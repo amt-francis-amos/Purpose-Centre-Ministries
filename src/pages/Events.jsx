@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import sanityClient from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
-
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -11,6 +10,7 @@ function urlFor(source) {
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     sanityClient
@@ -19,8 +19,14 @@ const Events = () => {
           title, description, image, date, author
         }`
       )
-      .then((data) => setEvents(data))
-      .catch(console.error);
+      .then((data) => {
+        setEvents(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -48,28 +54,50 @@ const Events = () => {
 
       {/* Events Section */}
       <div className="max-w-7xl mx-auto p-6 mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((event, index) => (
-            <motion.div
-              key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={urlFor(event.image).url()}
-                alt={event.title}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-4">
-                <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
-                <p className="text-gray-600 text-sm">{new Date(event.date).toDateString()}</p>
-                <p className="mt-2 text-gray-700">{event.description.substring(0, 100)}...</p>
-                <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <motion.p
+            className="text-center text-gray-600 text-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Loading events...
+          </motion.p>
+        ) : events.length === 0 ? (
+          <motion.div
+            className="text-center text-gray-500 text-xl font-semibold mt-10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            No events available at the moment.
+          </motion.div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.map((event, index) => (
+              <motion.div
+                key={index}
+                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={urlFor(event.image).url()}
+                  alt={event.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
+                  <p className="text-gray-600 text-sm">{new Date(event.date).toDateString()}</p>
+                  <p className="mt-2 text-gray-700">
+                    {event.description.substring(0, 100)}...
+                  </p>
+                  <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
