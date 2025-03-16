@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { sanityClient } from "../sanityClient"
+import sanityClient from "../sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import { assets } from "../assets/assets";
 
