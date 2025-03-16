@@ -49,7 +49,7 @@ const Home = () => {
             A place of worship, transformation, and divine purpose.
           </p>
 
-          <Link to="/membership">
+          <Link to="/become-a-member">
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
