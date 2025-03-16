@@ -17,10 +17,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="text-white">
-     
-      <section className="relative min-h-screen flex items-center justify-center px-5 md:px-10 lg:px-20 overflow-hidden">
-        
+    <div className="text-white w-full overflow-x-hidden">
+  
+      <section className="relative min-h-[500px] md:min-h-screen flex items-center justify-center w-full overflow-hidden">
+      
         <div className="absolute inset-0 w-full h-full">
           <motion.img
             key={currentImage}
@@ -34,16 +34,17 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
+       
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative z-10 max-w-2xl text-center"
+          className="relative z-10 max-w-4xl text-center px-4"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
             Welcome to <span className="text-[#D4AF37]">Purpose Centre Ministries</span>
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-gray-300">
+          <p className="mt-4 text-lg sm:text-xl text-gray-300">
             A place of worship, transformation, and divine purpose.
           </p>
 
@@ -51,34 +52,34 @@ const Home = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="mt-6 px-6 sm:px-8 py-2 sm:py-3 bg-[#D4AF37] text-[#6C5332] font-semibold rounded-full hover:bg-[#B9972F] transition"
+            className="mt-6 px-8 py-3 bg-[#D4AF37] text-[#6C5332] font-semibold rounded-full hover:bg-[#B9972F] transition"
           >
-           Become A Member
+            Become A Member
           </motion.button>
         </motion.div>
       </section>
 
- 
-      <section className="py-16 bg-gray-100 text-center">
+      
+      <section className="py-16 bg-gray-100 w-full">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-[#6C5332]"
+          className="text-2xl sm:text-4xl font-bold text-[#6C5332] text-center"
         >
           Our Vision & Our Mission
         </motion.h2>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-10 max-w-6xl mx-auto">
-          
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 text-left transition duration-300 hover:shadow-xl"
+            className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition duration-300 hover:shadow-xl"
           >
             <img
               src={assets.visionImg}
@@ -94,23 +95,17 @@ const Home = () => {
                 BIRTH, GROWTH, REPRODUCTION & IMPARTATION: Salvation / Born Again:
                 We give birth by witnessing to new souls, helping them be born into the family of God.
               </p>
-              <p className="mt-2 text-base text-gray-700">
-                SPIRIT REPRODUCTION: We develop and mature souls through discipleship and mentoring.
-              </p>
-              <p className="mt-2 text-base text-gray-700">
-                We grow God's children by feeding them with the word of God through transformational character-building, retreats, faith exercises, and the manifestation of spiritual gifts.
-              </p>
             </div>
           </motion.div>
 
-    
+          {/* Mission Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03 }}
-            className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 text-left transition duration-300 hover:shadow-xl"
+            className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition duration-300 hover:shadow-xl"
           >
             <img
               src={assets.missionImg}
@@ -124,30 +119,16 @@ const Home = () => {
                 God's Kingdom through evangelism, training, discipleship, and
                 the manifestation of the gifts of the Holy Spirit.
               </p>
-              <h2 className="font-bold text-amber-950 uppercase mt-4 mb-4">
-                Mission Details
-              </h2>
-              <ul className="mt-3 text-gray-700 list-disc pl-5">
-                <li>More Spiritual Environment</li>
-                <li>More Physical Environment</li>
-                <li>More Kingdom Expansion</li>
-                <li>More Evangelism/Witnessing</li>
-                <li>More Training Programmes</li>
-                <li>More Discipleship</li>
-                <li>More Empowerment</li>
-                <li>More Gifts of the Holy Spirit</li>
-              </ul>
             </div>
           </motion.div>
         </div>
       </section>
 
-    
-      <section>
+   
+      <section className="w-full">
         <MinistryCard />
       </section>
 
-     
       <ScrollToTop />
     </div>
   );
