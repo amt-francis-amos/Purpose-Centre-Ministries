@@ -85,7 +85,9 @@ export const images = [
 
 
   export const sermonVideos = [
-    "https://youtu.be/clKVdAnr940?si=-wHgfFV6uI2ZByV2",
-    "https://youtu.be/tkWjhjMfoMk?si=Woe2AktzOmrK2Mak",
-    "https://youtu.be/pN04Oux2mVQ?si=QWauQj7a5w2TcD8n",
+    "https://www.youtube.com/embed/pN04Oux2mVQ?si=dp03SPwNirr-CGw5",
+    "https://www.youtube.com/embed/tkWjhjMfoMk?si=ztLkeJ3EBrY9k4Ly",
+    "https://www.youtube.com/embed/JYsnZoZa4Do?si=_-7xG2b-wgzj6Q8l",
   ];
+
+  
