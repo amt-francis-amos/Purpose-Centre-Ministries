@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { assets,galleryImages } from "../assets/assets"; 
-
-
+import { assets, galleryImages } from "../assets/assets"; 
+import { FaTimes } from "react-icons/fa"; 
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -10,6 +9,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-gray-100">
 
+      
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.galleryImg})` }}
@@ -36,12 +36,14 @@ const Gallery = () => {
         </motion.div>
       </motion.div>
 
+      
       <div className="max-w-[1240px] mx-auto p-6 mt-20">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-gray-800">
             Our Church Moments
           </h2>
-     
+
+         
           <motion.div
             className="w-20 h-1 bg-amber-950 mx-auto mt-2 rounded-full"
             initial={{ scaleX: 0 }}
@@ -78,8 +80,15 @@ const Gallery = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          onClick={() => setSelectedImage(null)}
         >
+          
+          <button
+            className="absolute top-6 right-6 text-white text-3xl bg-gray-800 hover:bg-gray-600 rounded-full p-2 transition"
+            onClick={() => setSelectedImage(null)}
+          >
+            <FaTimes />
+          </button>
+
           <motion.img
             src={selectedImage}
             alt="Enlarged View"
