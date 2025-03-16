@@ -1,44 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import sanityClient from "../sanity";
+import { sanityClient } from "../sanityClient";  
 import imageUrlBuilder from "@sanity/image-url";
 import { assets } from "../assets/assets";
 
 const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
+const urlFor = (source) => builder.image(source);
 
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const data = await fetch(
-          `https://zhx38059.apicdn.sanity.io/v2021-10-21/data/query/production?query=*[_type == "event"] | order(date desc) {
-            title, description, image, date, author
-          }`,
-          {
-            headers: {
-              Authorization: `Bearer YOUR_API_TOKEN_HERE`, // Remove if dataset is public
-            },
-          }
-        );
-
-        if (!data.ok) throw new Error(`Error: ${data.status}`);
-
-        const result = await data.json();
-        setEvents(result.result); // Sanity returns data inside `result`
-      } catch (error) {
+    sanityClient
+      .fetch(`*[_type == "event"] | order(date desc) {
+        _id,
+        title,
+        description,
+        image,
+        date,
+        author
+      }`)
+      .then((data) => {
+        console.log("Fetched events:", data);
+        setEvents(data);
+      })
+      .catch((error) => {
         console.error("Sanity Fetch Error:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -63,7 +53,6 @@ const Events = () => {
         </motion.div>
       </motion.div>
 
-      {/* Events Section */}
       <div className="max-w-7xl mx-auto p-6 mt-10">
         {loading ? (
           <motion.p
@@ -86,25 +75,33 @@ const Events = () => {
           </motion.div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <motion.div
-                key={index}
+                key={event._id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
               >
-                <img
-                  src={urlFor(event.image).url()}
-                  alt={event.title}
-                  className="w-full h-64 object-cover"
-                />
+                {event.image && (
+                  <img
+                    src={urlFor(event.image).width(600).url()}
+                    alt={event.title}
+                    className="w-full h-64 object-cover"
+                  />
+                )}
                 <div className="p-4">
                   <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
-                  <p className="text-gray-600 text-sm">{new Date(event.date).toDateString()}</p>
-                  <p className="mt-2 text-gray-700">
-                    {event.description.substring(0, 100)}...
+                  <p className="text-gray-600 text-sm">
+                    {new Date(event.date).toDateString()}
                   </p>
-                  <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
+                  <p className="mt-2 text-gray-700">
+                    {event.description.length > 100
+                      ? event.description.substring(0, 100) + "..."
+                      : event.description}
+                  </p>
+                  {event.author && (
+                    <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
+                  )}
                 </div>
               </motion.div>
             ))}
