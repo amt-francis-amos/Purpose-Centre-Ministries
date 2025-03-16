@@ -30,7 +30,7 @@ const Footer = () => {
         
         <div>
           <h2 className="text-2xl font-bold text-amber-500">Purpose Centre Ministries</h2>
-          <p className="mt-3 text-gray-400">
+          <p className="max-w-[300px] mt-3 text-gray-400">
             A place of worship, transformation, and divine purpose. 
             Join us for a powerful experience in God's presence.
           </p>
