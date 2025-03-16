@@ -38,10 +38,10 @@ const VirtualChurch = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            WELCOME TO OUR VIRTUAL CHURCH
+            {/* -WELCOME TO OUR VIRTUAL CHURCH */}
           </motion.h1>
           <p className="text-lg md:text-xl mt-2 font-medium">
-            Join us in worship anytime, anywhere.
+            {/* Join us in worship anytime, anywhere. */}
           </p>
         </motion.div>
       </motion.div>
