@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import sanityClient from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
+import { assets } from "../assets/assets";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -31,10 +32,10 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+      
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url('/events-hero.jpg')` }}
+        style={{ backgroundImage: `url(${assets.eventImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}

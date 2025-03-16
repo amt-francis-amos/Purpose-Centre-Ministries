@@ -17,9 +17,11 @@ import  conferenceImg from './conference.jpg'
 import  galleryImg from './gallery-img.jpg'
 import  memberImg from './member-img.jpg'
 import  onlineImg from './online.jpg'
+import  eventImg from './event-img.jpg'
 
 
 export const assets = {
+    eventImg,
     onlineImg,
     memberImg,
     galleryImg,
