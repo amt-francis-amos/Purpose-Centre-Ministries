@@ -19,10 +19,12 @@ import  memberImg from './member-img.jpg'
 import  onlineImg from './online.jpg'
 import  eventImg from './event-img.jpg'
 import  contactImg from './contact.jpeg'
+import  donationImg from './donation.jpg'
 
 
 export const assets = {
    contactImg,
+   donationImg,
     eventImg,
     onlineImg,
     memberImg,
