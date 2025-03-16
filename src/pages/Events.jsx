@@ -6,7 +6,7 @@ import { assets } from "../assets/assets";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
-  return source && source.asset ? builder.image(source).url() : assets.defaultImg;
+  return builder.image(source);
 }
 
 const Events = () => {
@@ -14,26 +14,35 @@ const Events = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "event"] | order(date desc) {
-          title, description, image, date, author
-        }`
-      )
-      .then((data) => {
-        console.log("Fetched Events:", data); // Debugging output
-        setEvents(data);
+    const fetchEvents = async () => {
+      try {
+        const data = await fetch(
+          `https://zhx38059.apicdn.sanity.io/v2021-10-21/data/query/production?query=*[_type == "event"] | order(date desc) {
+            title, description, image, date, author
+          }`,
+          {
+            headers: {
+              Authorization: `Bearer YOUR_API_TOKEN_HERE`, // Remove if dataset is public
+            },
+          }
+        );
+
+        if (!data.ok) throw new Error(`Error: ${data.status}`);
+
+        const result = await data.json();
+        setEvents(result.result); // Sanity returns data inside `result`
+      } catch (error) {
+        console.error("Sanity Fetch Error:", error);
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching events:", error);
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchEvents();
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header Section */}
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.eventImg})` }}
@@ -77,36 +86,28 @@ const Events = () => {
           </motion.div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => {
-              console.log("Event Image URL:", urlFor(event.image)); // Debugging output
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-white shadow-lg rounded-lg overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img
-                    src={urlFor(event.image)}
-                    alt={event.title}
-                    className="w-full h-64 object-cover"
-                    onError={(e) => {
-                      e.target.src = assets.defaultImg; // Fallback image
-                    }}
-                  />
-                  <div className="p-4">
-                    <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
-                    <p className="text-gray-600 text-sm">
-                      {event.date ? new Date(event.date).toDateString() : "No date available"}
-                    </p>
-                    <p className="mt-2 text-gray-700">
-                      {event.description ? event.description.substring(0, 100) : "No description available"}...
-                    </p>
-                    <p className="mt-2 text-gray-500 text-sm">By {event.author || "Unknown"}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {events.map((event, index) => (
+              <motion.div
+                key={index}
+                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={urlFor(event.image).url()}
+                  alt={event.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-4">
+                  <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
+                  <p className="text-gray-600 text-sm">{new Date(event.date).toDateString()}</p>
+                  <p className="mt-2 text-gray-700">
+                    {event.description.substring(0, 100)}...
+                  </p>
+                  <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         )}
       </div>
