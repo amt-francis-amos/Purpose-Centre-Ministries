@@ -65,12 +65,13 @@ const Events = () => {
           </motion.p>
         ) : events.length === 0 ? (
           <motion.div
-            className="text-center text-gray-500 text-xl font-semibold mt-10"
+            className="text-center text-gray-500 text-xl font-semibold mt-10 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            No events available at the moment.
+            <p>No events available at the moment.</p>
+            <span className="text-4xl mt-2">😔</span>
           </motion.div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
