@@ -7,4 +7,4 @@ const sanityClient = createClient({
   apiVersion: "2023-01-01", 
 });
 
-export default sanityClient;
+export default sanityClient; 
