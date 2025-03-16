@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import sanityClient from "../sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import { assets } from "../assets/assets";
+import ScrollToTop from "../components/ScrollToTop";
 
 const builder = imageUrlBuilder(sanityClient);
 const urlFor = (source) => builder.image(source);
@@ -33,7 +34,7 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header Section */}
+      
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.eventImg})` }}
@@ -54,7 +55,7 @@ const Events = () => {
         </motion.div>
       </motion.div>
 
-      {/* Events Section */}
+     
       <div className="max-w-7xl mx-auto p-6 mt-10">
         {loading ? (
           <motion.p
@@ -84,7 +85,7 @@ const Events = () => {
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* Event Image */}
+               
                 {event.image && (
                   <img
                     src={urlFor(event.image).width(600).url()}
@@ -93,7 +94,7 @@ const Events = () => {
                   />
                 )}
 
-                {/* Event Content */}
+               
                 <div className="p-5">
                   <h2 className="text-xl font-semibold text-gray-900">
                     {event.title}
@@ -117,6 +118,7 @@ const Events = () => {
           </div>
         )}
       </div>
+      <ScrollToTop />
     </div>
   );
 };
