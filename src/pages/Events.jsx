@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import sanityClient from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
-import { assets } from "../assets/assets";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -12,12 +11,14 @@ function urlFor(source) {
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refresh, setRefresh] = useState(false); // 🔄 Refresh trigger
 
-  useEffect(() => {
+  const fetchEvents = () => {
+    setLoading(true);
     sanityClient
       .fetch(
         `*[_type == "event"] | order(date desc) {
-          title, description, image, date, author
+          _id, title, description, image, date, author
         }`
       )
       .then((data) => {
@@ -28,14 +29,18 @@ const Events = () => {
         console.error(error);
         setLoading(false);
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, [refresh]); 
 
   return (
     <div className="min-h-screen bg-gray-100">
-      
+     
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.eventImg})` }}
+        style={{ backgroundImage: `url('/events-hero.jpg')` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
@@ -53,7 +58,7 @@ const Events = () => {
         </motion.div>
       </motion.div>
 
-      {/* Events Section */}
+    
       <div className="max-w-7xl mx-auto p-6 mt-10">
         {loading ? (
           <motion.p
@@ -73,12 +78,18 @@ const Events = () => {
           >
             <p>No events available at the moment.</p>
             <span className="text-4xl mt-2">😔</span>
+            <button
+              onClick={() => setRefresh(!refresh)} 
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
+            >
+              Refresh Events
+            </button>
           </motion.div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <motion.div
-                key={index}
+                key={event._id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
