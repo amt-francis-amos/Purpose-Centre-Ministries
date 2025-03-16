@@ -42,6 +42,15 @@ export const images = [
      assets.slider2,
      assets.slider3
   ]; 
+
+
+ export const galleryImages = [
+    assets.partnerImg,
+    assets.conferenceImg,
+    assets.youthMinistryImg,
+    assets.retreatImg,
+    assets.slider2,
+  ];
   
 
   export const ministries = [

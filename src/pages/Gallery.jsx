@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { assets } from "../assets/assets"; 
+import { assets,galleryImages } from "../assets/assets"; 
 
-const images = [
-  "/images/church1.jpg",
-  "/images/church2.jpg",
-  "/images/church3.jpg",
-  "/images/church4.jpg",
-  "/images/church5.jpg",
-  "/images/church6.jpg",
-];
+
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.galleryImg})` }}
@@ -58,7 +51,7 @@ const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((src, index) => (
+          {galleryImages.map((src, index) => (
             <motion.div
               key={index}
               className="overflow-hidden rounded-lg shadow-lg cursor-pointer relative"
