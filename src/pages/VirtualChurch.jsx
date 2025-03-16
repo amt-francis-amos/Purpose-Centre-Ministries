@@ -18,8 +18,8 @@ const VirtualChurch = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <motion.div
-        className="relative h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.onlineImg})` }}
+         className="relative min-h-[259px] md:h-[470px] w-full bg-cover bg-center md:bg-fixed"
+  style={{ backgroundImage: `url(${assets.onlineImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
