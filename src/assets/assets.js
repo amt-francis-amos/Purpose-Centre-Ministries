@@ -81,3 +81,11 @@ export const images = [
         "Seeks to build Childrens faith, relationships and ministry, through resources we obtain, events we produce and ongoing childhood development. Create an atmosphere of support, encouragement and prayer for the children that are within the Ministry.",
     },
   ];
+
+
+
+  export const sermonVideos = [
+    "https://youtu.be/clKVdAnr940?si=-wHgfFV6uI2ZByV2",
+    "https://youtu.be/tkWjhjMfoMk?si=Woe2AktzOmrK2Mak",
+    "https://youtu.be/pN04Oux2mVQ?si=QWauQj7a5w2TcD8n",
+  ];

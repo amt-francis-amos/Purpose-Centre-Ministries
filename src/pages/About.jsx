@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { assets } from "../assets/assets";
+import { assets, sermonVideos } from "../assets/assets";
 import ScrollToTop from "../components/ScrollToTop";
 
 const fadeInUp = {
@@ -16,35 +16,34 @@ const staggerContainer = {
 const About = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-    <motion.div
-  className="relative h-[470px] w-full bg-cover bg-center"
-  style={{ backgroundImage: `url(${assets.aboutImg})` }}
-  initial={{ opacity: 0, scale: 1.1 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1.2 }}
->
- 
-  <div className="absolute inset-0 bg-black opacity-50"></div>
+    
+      <motion.div
+        className="relative h-[470px] w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${assets.aboutImg})` }}
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2 }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
- 
-  <motion.div
-    className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1.5 }}
-  >
-    <motion.h1
-      className="text-4xl md:text-6xl font-extrabold drop-shadow-lg"
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      ABOUT US
-    </motion.h1>
-  </motion.div>
-</motion.div>
+        <motion.div
+          className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold drop-shadow-lg"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            ABOUT US
+          </motion.h1>
+        </motion.div>
+      </motion.div>
 
-
+     
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20 text-gray-700"
         variants={staggerContainer}
@@ -63,9 +62,10 @@ const About = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8 }}
-          ></motion.div>
+          />
         </div>
 
+       
         <motion.section
           className="mb-8 flex flex-col mt-20 md:flex-row gap-8"
           variants={fadeInUp}
@@ -82,7 +82,7 @@ const About = () => {
               Purpose Centre Ministries
             </h2>
             <p className="mt-2 leading-relaxed">
-             Purpose Centre Ministries is a non-denominational Training Church.
+              Purpose Centre Ministries is a non-denominational Training Church.
               The Chapel was founded on the Resurrection Sunday, 5th April, 2015
               at the old TABUSTECH Assembly Hall. Prior to that, the ministry
               existed at the Sekondi Methodist Park as a Prayer and Training
@@ -98,8 +98,56 @@ const About = () => {
           </motion.div>
         </motion.section>
 
-       
+   
+        <motion.div
+          className="text-center my-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+            Church Sermon Videos
+          </h2>
+          <motion.div
+            className="w-20 h-1 bg-amber-950 mx-auto mt-2 rounded-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8 }}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {sermonVideos.map((video, index) => (
+              <motion.div
+                key={index}
+                className="overflow-hidden rounded-lg shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              >
+                <iframe
+                  width="100%"
+                  height="250"
+                  src={video}
+                  title={`Church Sermon ${index + 1}`}
+                  frameBorder="0"
+                  allowFullScreen
+                  className="rounded-lg"
+                ></iframe>
+              </motion.div>
+            ))}
+          </div>
+
+        
+          <motion.a
+            href="/videos"
+            className="inline-block mt-10 px-6 py-3 text-lg font-semibold text-white bg-amber-950 rounded-full shadow-lg hover:bg-amber-800 transition duration-300"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
+            Click this button to watch more videos
+          </motion.a>
+        </motion.div>
       </motion.div>
+
       <ScrollToTop />
     </div>
   );
