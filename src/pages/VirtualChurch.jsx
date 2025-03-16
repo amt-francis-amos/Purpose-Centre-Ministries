@@ -147,7 +147,7 @@ const VirtualChurch = () => {
         <p className="mt-2 text-lg">
           Be part of our church family from anywhere in the world.
         </p>
-        <Link to="/membershipForm">
+        <Link to="/membership">
           <motion.button
             className="mt-4 inline-block px-6 py-3 bg-white text-amber-950 text-lg font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105"
             whileHover={{ scale: 1.1 }}
