@@ -23,11 +23,11 @@ const Donation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 py-20">
      
       <motion.div
         className="relative min-h-[300px] md:h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.aboutImg})` }}
+        style={{ backgroundImage: `url(${assets.donationImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
