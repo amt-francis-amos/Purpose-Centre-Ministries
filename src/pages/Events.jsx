@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import sanityClient from "../sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
-// Image builder for Sanity
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);

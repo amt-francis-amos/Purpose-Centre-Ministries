@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sanity/client": "^6.28.3",
+    "@sanity/image-url": "^1.1.0",
     "@tailwindcss/vite": "^4.0.14",
     "framer-motion": "^12.5.0",
     "react": "^19.0.0",
