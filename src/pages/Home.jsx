@@ -53,7 +53,7 @@ const Home = () => {
             transition={{ type: "spring", stiffness: 200 }}
             className="mt-6 px-6 sm:px-8 py-2 sm:py-3 bg-[#D4AF37] text-[#6C5332] font-semibold rounded-full hover:bg-[#B9972F] transition"
           >
-            Our History
+           Become A Member
           </motion.button>
         </motion.div>
       </section>
