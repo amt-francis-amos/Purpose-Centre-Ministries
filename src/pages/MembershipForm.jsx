@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import { assets } from "../assets/assets";
 
 const MembershipForm = () => {
   const {
@@ -15,179 +16,154 @@ const MembershipForm = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
-      <motion.h2
-        className="text-2xl md:text-3xl font-bold text-center text-amber-950"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+    <div className="min-h-screen bg-gray-100">
+      
+      {/* Hero Section */}
+      <motion.div
+        className="relative h-[470px] w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${assets.membershipImg})` }}
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2 }}
       >
-        Become a Member
-      </motion.h2>
-      <p className="text-gray-600 text-center mt-2">
-        Join our church family by filling out this form.
-      </p>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <motion.form
-        onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-      
-        <div>
-          <label className="block text-gray-700 font-medium">Full Name</label>
-          <input
-            type="text"
-            {...register("fullName", { required: "Full Name is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="John Doe"
-          />
-          {errors.fullName && (
-            <p className="text-red-500 text-sm">{errors.fullName.message}</p>
-          )}
-        </div>
-
-    
-        <div>
-          <label className="block text-gray-700 font-medium">Email</label>
-          <input
-            type="email"
-            {...register("email", { required: "Email is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="john@example.com"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
-          )}
-        </div>
-
-        
-        <div>
-          <label className="block text-gray-700 font-medium">Phone Number</label>
-          <input
-            type="tel"
-            {...register("phone", { required: "Phone number is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="+233 555 123 456"
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm">{errors.phone.message}</p>
-          )}
-        </div>
-
-      
-        <div>
-          <label className="block text-gray-700 font-medium">Gender</label>
-          <select
-            {...register("gender", { required: "Gender is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+        <motion.div
+          className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold drop-shadow-lg"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          {errors.gender && (
-            <p className="text-red-500 text-sm">{errors.gender.message}</p>
-          )}
-        </div>
+            BECOME A MEMBER
+          </motion.h1>
+        </motion.div>
+      </motion.div>
 
-        {/* Date of Birth */}
-        <div>
-          <label className="block text-gray-700 font-medium">Date of Birth</label>
-          <input
-            type="date"
-            {...register("dob", { required: "Date of Birth is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-          />
-          {errors.dob && (
-            <p className="text-red-500 text-sm">{errors.dob.message}</p>
-          )}
-        </div>
+      {/* Form Section */}
+      <div className="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
+        <motion.h2
+          className="text-2xl md:text-3xl font-bold text-center text-amber-950"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Join Our Church Family
+        </motion.h2>
+        <p className="text-gray-600 text-center mt-2">
+          Fill out the form below to become a member.
+        </p>
 
-       
-        <div>
-          <label className="block text-gray-700 font-medium">Address</label>
-          <input
-            type="text"
-            {...register("address", { required: "Address is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="123 Church Street, Accra, Ghana"
-          />
-          {errors.address && (
-            <p className="text-red-500 text-sm">{errors.address.message}</p>
-          )}
-        </div>
+        <motion.form
+          onSubmit={handleSubmit(onSubmit)}
+          className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Full Name */}
+          <div>
+            <label className="block text-gray-700 font-medium">Full Name</label>
+            <input
+              type="text"
+              {...register("fullName", { required: "Full Name is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+              placeholder="John Doe"
+            />
+            {errors.fullName && (
+              <p className="text-red-500 text-sm">{errors.fullName.message}</p>
+            )}
+          </div>
 
-       
-        <div>
-          <label className="block text-gray-700 font-medium">Marital Status</label>
-          <select
-            {...register("maritalStatus", { required: "Marital status is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-          >
-            <option value="">Select Status</option>
-            <option value="Single">Single</option>
-            <option value="Married">Married</option>
-            <option value="Divorced">Divorced</option>
-            <option value="Widowed">Widowed</option>
-          </select>
-          {errors.maritalStatus && (
-            <p className="text-red-500 text-sm">{errors.maritalStatus.message}</p>
-          )}
-        </div>
+          {/* Email */}
+          <div>
+            <label className="block text-gray-700 font-medium">Email</label>
+            <input
+              type="email"
+              {...register("email", { required: "Email is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+              placeholder="john@example.com"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+          </div>
 
-        
-        <div>
-          <label className="block text-gray-700 font-medium">Church Denomination</label>
-          <input
-            type="text"
-            {...register("churchDenomination", { required: "Denomination is required" })}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="Pentecostal, Baptist, Catholic..."
-          />
-        </div>
+          {/* Phone Number */}
+          <div>
+            <label className="block text-gray-700 font-medium">Phone Number</label>
+            <input
+              type="tel"
+              {...register("phone", { required: "Phone number is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+              placeholder="+233 555 123 456"
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm">{errors.phone.message}</p>
+            )}
+          </div>
 
-        <div>
-          <label className="block text-gray-700 font-medium">
-            How did you hear about us?
-          </label>
-          <select {...register("referralSource")} className="w-full mt-1 p-2 border border-gray-300 rounded-md">
-            <option value="Social Media">Social Media</option>
-            <option value="Friend/Family">Friend/Family</option>
-            <option value="Website">Website</option>
-            <option value="Event">Event</option>
-          </select>
-        </div>
+          {/* Gender */}
+          <div>
+            <label className="block text-gray-700 font-medium">Gender</label>
+            <select
+              {...register("gender", { required: "Gender is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+            >
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            {errors.gender && (
+              <p className="text-red-500 text-sm">{errors.gender.message}</p>
+            )}
+          </div>
 
-      
-        <div className="md:col-span-2">
-          <label className="block text-gray-700 font-medium">Prayer Requests</label>
-          <textarea
-            {...register("prayerRequest")}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-            placeholder="Share your prayer request..."
-          />
-        </div>
+          {/* Date of Birth */}
+          <div>
+            <label className="block text-gray-700 font-medium">Date of Birth</label>
+            <input
+              type="date"
+              {...register("dob", { required: "Date of Birth is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+            />
+            {errors.dob && (
+              <p className="text-red-500 text-sm">{errors.dob.message}</p>
+            )}
+          </div>
 
-       
-        <div className="md:col-span-2 flex items-center">
-          <input type="checkbox" {...register("subscribe")} className="mr-2" />
-          <label className="text-gray-700">Subscribe to church updates</label>
-        </div>
+          {/* Address */}
+          <div className="md:col-span-2">
+            <label className="block text-gray-700 font-medium">Address</label>
+            <input
+              type="text"
+              {...register("address", { required: "Address is required" })}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+              placeholder="123 Church St, Accra"
+            />
+            {errors.address && (
+              <p className="text-red-500 text-sm">{errors.address.message}</p>
+            )}
+          </div>
 
-        
-        <div className="md:col-span-2 text-center">
-          <motion.button
-            type="submit"
-            className="px-6 py-3 bg-amber-950 text-white text-lg font-semibold rounded-lg shadow-md hover:scale-105 transition-transform"
-            whileHover={{ scale: 1.05 }}
-          >
-            Submit Application
-          </motion.button>
-        </div>
-      </motion.form>
+          {/* Submit Button */}
+          <div className="md:col-span-2 text-center">
+            <motion.button
+              type="submit"
+              className="mt-4 px-6 py-3 text-lg font-semibold text-white bg-amber-950 rounded-full shadow-lg hover:bg-amber-800 transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            >
+              Submit Membership Form
+            </motion.button>
+          </div>
+        </motion.form>
+      </div>
     </div>
   );
 };
