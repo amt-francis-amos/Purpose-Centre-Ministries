@@ -18,10 +18,10 @@ const MembershipForm = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       
-      {/* Hero Section */}
+   
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.membershipImg})` }}
+        style={{ backgroundImage: `url(${assets.memberImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
@@ -45,7 +45,7 @@ const MembershipForm = () => {
         </motion.div>
       </motion.div>
 
-      {/* Form Section */}
+     
       <div className="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
         <motion.h2
           className="text-2xl md:text-3xl font-bold text-center text-amber-950"
@@ -66,7 +66,7 @@ const MembershipForm = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {/* Full Name */}
+        
           <div>
             <label className="block text-gray-700 font-medium">Full Name</label>
             <input
@@ -80,7 +80,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Email */}
+        
           <div>
             <label className="block text-gray-700 font-medium">Email</label>
             <input
@@ -94,7 +94,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Phone Number */}
+        
           <div>
             <label className="block text-gray-700 font-medium">Phone Number</label>
             <input
@@ -108,7 +108,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Gender */}
+         
           <div>
             <label className="block text-gray-700 font-medium">Gender</label>
             <select
@@ -124,7 +124,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Date of Birth */}
+        
           <div>
             <label className="block text-gray-700 font-medium">Date of Birth</label>
             <input
@@ -137,7 +137,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Address */}
+        
           <div className="md:col-span-2">
             <label className="block text-gray-700 font-medium">Address</label>
             <input
@@ -151,7 +151,7 @@ const MembershipForm = () => {
             )}
           </div>
 
-          {/* Submit Button */}
+         
           <div className="md:col-span-2 text-center">
             <motion.button
               type="submit"
