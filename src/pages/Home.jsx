@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { images } from "../assets/assets"; 
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 import MinistryCard from "../components/MinistryCard";
 import ScrollToTop from "../components/ScrollToTop";
@@ -48,14 +49,16 @@ const Home = () => {
             A place of worship, transformation, and divine purpose.
           </p>
 
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="mt-6 px-8 py-3 bg-[#D4AF37] text-[#6C5332] font-semibold rounded-full hover:bg-[#B9972F] transition"
-          >
-            Become A Member
-          </motion.button>
+          <Link to="/membership">
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="mt-6 px-8 py-3 bg-[#D4AF37] text-[#6C5332] font-semibold rounded-full hover:bg-[#B9972F] transition"
+    >
+      Become A Member
+    </motion.button>
+  </Link>
         </motion.div>
       </section>
 
@@ -98,7 +101,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Mission Card */}
+        
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
