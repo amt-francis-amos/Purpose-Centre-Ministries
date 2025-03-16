@@ -11,7 +11,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
 };
-
+ 
 const Ministries = () => {
   return (
     <div className="min-h-screen bg-gray-100">
