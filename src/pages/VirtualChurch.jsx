@@ -19,7 +19,7 @@ const VirtualChurch = () => {
     <div className="min-h-screen bg-gray-100">
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.churchBg})` }}
+        style={{ backgroundImage: `url(${assets.onlineImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2 }}
@@ -46,7 +46,7 @@ const VirtualChurch = () => {
         </motion.div>
       </motion.div>
 
-      {/* Live Streaming Section */}
+     
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20 text-center"
         variants={staggerContainer}

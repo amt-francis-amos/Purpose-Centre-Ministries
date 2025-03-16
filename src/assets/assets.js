@@ -16,9 +16,11 @@ import  heroBg from './hero.jpg'
 import  conferenceImg from './conference.jpg'
 import  galleryImg from './gallery-img.jpg'
 import  memberImg from './member-img.jpg'
+import  onlineImg from './online.jpg'
 
 
 export const assets = {
+    onlineImg,
     memberImg,
     galleryImg,
     retreatImg,
