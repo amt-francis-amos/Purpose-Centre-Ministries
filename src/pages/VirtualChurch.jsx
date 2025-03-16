@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { assets, sermonVideos } from "../assets/assets";
 import ScrollToTop from "../components/ScrollToTop";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
