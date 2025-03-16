@@ -10,6 +10,7 @@ import VirtualChurch from './pages/VirtualChurch';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import MembershipForm from './pages/MembershipForm';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/event" element={<Events />} />
+          <Route path="/membership" element={<MembershipForm />} />
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/virtual" element={<VirtualChurch />} />
           <Route path="/donation" element={<Donation />} />

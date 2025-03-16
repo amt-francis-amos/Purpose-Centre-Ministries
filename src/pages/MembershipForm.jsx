@@ -35,7 +35,7 @@ const MembershipForm = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Full Name */}
+      
         <div>
           <label className="block text-gray-700 font-medium">Full Name</label>
           <input
@@ -49,7 +49,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Email */}
+    
         <div>
           <label className="block text-gray-700 font-medium">Email</label>
           <input
@@ -63,7 +63,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Phone Number */}
+        
         <div>
           <label className="block text-gray-700 font-medium">Phone Number</label>
           <input
@@ -77,7 +77,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Gender */}
+      
         <div>
           <label className="block text-gray-700 font-medium">Gender</label>
           <select
@@ -106,7 +106,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Address */}
+       
         <div>
           <label className="block text-gray-700 font-medium">Address</label>
           <input
@@ -120,7 +120,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Marital Status */}
+       
         <div>
           <label className="block text-gray-700 font-medium">Marital Status</label>
           <select
@@ -138,7 +138,7 @@ const MembershipForm = () => {
           )}
         </div>
 
-        {/* Church Denomination */}
+        
         <div>
           <label className="block text-gray-700 font-medium">Church Denomination</label>
           <input
@@ -149,7 +149,6 @@ const MembershipForm = () => {
           />
         </div>
 
-        {/* How they heard about the church */}
         <div>
           <label className="block text-gray-700 font-medium">
             How did you hear about us?
@@ -162,7 +161,7 @@ const MembershipForm = () => {
           </select>
         </div>
 
-        {/* Prayer Requests */}
+      
         <div className="md:col-span-2">
           <label className="block text-gray-700 font-medium">Prayer Requests</label>
           <textarea
@@ -172,13 +171,13 @@ const MembershipForm = () => {
           />
         </div>
 
-        {/* Newsletter Subscription */}
+       
         <div className="md:col-span-2 flex items-center">
           <input type="checkbox" {...register("subscribe")} className="mr-2" />
           <label className="text-gray-700">Subscribe to church updates</label>
         </div>
 
-        {/* Submit Button */}
+        
         <div className="md:col-span-2 text-center">
           <motion.button
             type="submit"

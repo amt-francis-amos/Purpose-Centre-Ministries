@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { assets, sermonVideos } from "../assets/assets"; // Assume sermonVideos contains YouTube links
+import { assets, sermonVideos } from "../assets/assets";
 import ScrollToTop from "../components/ScrollToTop";
 
 const fadeInUp = {
@@ -16,7 +16,6 @@ const staggerContainer = {
 const VirtualChurch = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-     
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.churchBg})` }}
@@ -83,7 +82,6 @@ const VirtualChurch = () => {
         </motion.div>
       </motion.div>
 
-      
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20"
         variants={staggerContainer}
@@ -136,7 +134,6 @@ const VirtualChurch = () => {
         </div>
       </motion.div>
 
-    
       <motion.div
         className="bg-amber-950 text-white text-center py-12 mt-20"
         initial={{ opacity: 0 }}
@@ -149,14 +146,15 @@ const VirtualChurch = () => {
         <p className="mt-2 text-lg">
           Be part of our church family from anywhere in the world.
         </p>
-        <motion.a
-          href="/connect"
-          className="mt-4 inline-block px-6 py-3 bg-white text-amber-950 text-lg font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-        >
-          Get Connected
-        </motion.a>
+        <Link to="/membershipForm">
+          <motion.button
+            className="mt-4 inline-block px-6 py-3 bg-white text-amber-950 text-lg font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
+            Get Connected
+          </motion.button>
+        </Link>
       </motion.div>
 
       <ScrollToTop />
