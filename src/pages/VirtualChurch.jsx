@@ -153,7 +153,7 @@ const VirtualChurch = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
           >
-            Get Connected
+            Become A Member
           </motion.button>
         </Link>
       </motion.div>
