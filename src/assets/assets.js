@@ -13,6 +13,7 @@ import amoImg from './amo.png'
 import retreatImg from './retreat.jpg'
 import  partnerImg from './partner.jpg'
 import  heroBg from './hero.jpg'
+import  conferenceImg from './conference.jpg'
 
 
 export const assets = {
@@ -30,7 +31,8 @@ export const assets = {
     menMinistryImg,
     womenMinistryImg,
     youthMinistryImg,
-    childrenMinistryImg
+    childrenMinistryImg,
+    conferenceImg
 }
 
 

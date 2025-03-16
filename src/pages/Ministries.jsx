@@ -152,7 +152,7 @@ const Ministries = () => {
             whileHover={{ scale: 1.05 }}
           >
             <img
-              src={assets.menWomenImg}
+              src={assets.conferenceImgImg}
               alt="Men & Women Ministry"
               className="w-full h-60 object-cover"
             />
