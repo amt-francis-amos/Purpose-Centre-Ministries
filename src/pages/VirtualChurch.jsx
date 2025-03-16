@@ -74,7 +74,7 @@ const VirtualChurch = () => {
           <iframe
             width="100%"
             height="450"
-            src="https://www.youtube.com/embed/YOUR_LIVE_STREAM_ID"
+            src="https://www.youtube.com/@purposecentreministries5530"
             title="Live Church Service"
             frameBorder="0"
             allowFullScreen
