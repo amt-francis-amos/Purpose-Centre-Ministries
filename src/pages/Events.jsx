@@ -33,6 +33,7 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Header Section */}
       <motion.div
         className="relative h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.eventImg})` }}
@@ -53,6 +54,7 @@ const Events = () => {
         </motion.div>
       </motion.div>
 
+      {/* Events Section */}
       <div className="max-w-7xl mx-auto p-6 mt-10">
         {loading ? (
           <motion.p
@@ -74,33 +76,40 @@ const Events = () => {
             <span className="text-4xl mt-2">😔</span>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event) => (
               <motion.div
                 key={event._id}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
+                className="bg-white shadow-md rounded-lg overflow-hidden transform transition-all hover:shadow-xl hover:scale-[1.02]"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
               >
+                {/* Event Image */}
                 {event.image && (
                   <img
                     src={urlFor(event.image).width(600).url()}
                     alt={event.title}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-60 object-cover"
                   />
                 )}
-                <div className="p-4">
-                  <h2 className="text-xl font-bold text-gray-900">{event.title}</h2>
-                  <p className="text-gray-600 text-sm">
+
+                {/* Event Content */}
+                <div className="p-5">
+                  <h2 className="text-xl font-semibold text-gray-900">
+                    {event.title}
+                  </h2>
+                  <p className="text-gray-500 text-sm mt-1">
                     {new Date(event.date).toDateString()}
                   </p>
-                  <p className="mt-2 text-gray-700">
-                    {event.description.length > 100
-                      ? event.description.substring(0, 100) + "..."
+                  <p className="mt-3 text-gray-700 leading-relaxed">
+                    {event.description.length > 120
+                      ? event.description.substring(0, 120) + "..."
                       : event.description}
                   </p>
                   {event.author && (
-                    <p className="mt-2 text-gray-500 text-sm">By {event.author}</p>
+                    <p className="mt-3 text-gray-500 text-sm">
+                      <span className="font-medium">By:</span> {event.author}
+                    </p>
                   )}
                 </div>
               </motion.div>
