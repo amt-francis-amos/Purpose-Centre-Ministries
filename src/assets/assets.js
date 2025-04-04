@@ -142,3 +142,39 @@ export const images = [
       "Family participation in spiritual growth",
       "Supporters of this mission",
     ];
+
+
+
+
+    export const coreValues = [
+      {
+        title: "Worship",
+        description:
+          "God ultimately desires a relationship with us, encouraging in women a heart for worship and a sensitive spirit to His presence."
+      },
+      {
+        title: "Discipleship",
+        description:
+          "God desires women to grow into His fullness and become all they were created to be as His bride."
+      },
+      {
+        title: "Ministry",
+        description:
+          "God grows our gifts and abilities to build His kingdom and bless His people."
+      },
+      {
+        title: "Outreach",
+        description:
+          "We are called to share the good news of the Gospel, lift Jesus Christ, and glorify God."
+      },
+      {
+        title: "Fellowship",
+        description:
+          "We are called into a community with one another, enriched by loving fellowship."
+      },
+      {
+        title: "Excellence",
+        description:
+          "God desires our best, not perfectionism. We minister to women in their uniqueness, encouraging a deeper relationship with Jesus."
+      }
+    ];
