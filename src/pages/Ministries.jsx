@@ -12,7 +12,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
 };
- 
+
 const Ministries = () => {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -32,7 +32,7 @@ const Ministries = () => {
           transition={{ duration: 1.5 }}
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-extrabold drop-shadow-lg"
+            className="text-3xl md:text-4xl font-extrabold drop-shadow-lg"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
@@ -50,7 +50,7 @@ const Ministries = () => {
       >
         <div className="text-center mb-10">
           <motion.h1
-            className="text-2xl md:text-4xl font-bold text-amber-950"
+            className="text-xl md:text-2xl font-bold text-amber-950"
             variants={fadeInUp}
           >
             OUR MINISTRIES
@@ -78,10 +78,10 @@ const Ministries = () => {
               className="w-full h-60 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-lg font-bold text-gray-900">
                 Purpose School of Ministry
               </h2>
-              <p className="mt-2  text-base text-gray-600">
+              <p className="mt-2 text-sm text-gray-600">
                 Purpose School of Ministry is an in-house Training School for
                 all members of the Church. The school is designed to train
                 ministers in the Basic doctrines of Christ, equip people to
@@ -106,8 +106,8 @@ const Ministries = () => {
               className="w-full h-60 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-900">Retreat</h2>
-              <p className="mt-2 text-base text-gray-600">
+              <h2 className="text-lg font-bold text-gray-900">Retreat</h2>
+              <p className="mt-2 text-sm text-gray-600">
                 The ministry ensures that all the various ministries such as Men
                 Ministry, Women Ministry, Youth Ministry, Church Leadership, and
                 the Pastoral Council embark on periodic Prayer and Word-Based
@@ -130,10 +130,10 @@ const Ministries = () => {
               className="w-full h-60 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-lg font-bold text-gray-900">
                 Partnership Conference
               </h2>
-              <p className="mt-2 text-base text-gray-600">
+              <p className="mt-2 text-sm text-gray-600">
                 The ministry organizes a day partnership conference with all
                 stakeholders of the ministry. During this conference, all
                 sponsors, sons and daughters, affiliate churches, mentors, and
@@ -158,10 +158,10 @@ const Ministries = () => {
               className="w-full h-60 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-lg font-bold text-gray-900">
                 Men & Women Ministry
               </h2>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-sm text-gray-600">
                 Ministries designed to support men and women in their spiritual,
                 family, and community lives.
               </p>
