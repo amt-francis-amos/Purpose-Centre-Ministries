@@ -47,7 +47,7 @@ const Navbar = () => {
           <img className="w-[160px]" src={assets.logo} alt="Church Logo" />
         </Link>
 
-        {/* Desktop Navigation */}
+        
         <div className="hidden md:flex flex-1 justify-center space-x-8">
           {navLinks.map((link) =>
             link.name === "Ministries" ? (
@@ -105,7 +105,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Desktop Donate Button */}
         <div className="hidden md:block">
           <Link
             to="/donation"
@@ -115,7 +114,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle Button */}
+       
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <FaTimes className="text-2xl text-[#6C5332]" />
@@ -125,7 +124,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      
       {isOpen && <MobileMenu links={navLinks} setIsOpen={setIsOpen} />}
     </nav>
   );
@@ -161,7 +160,7 @@ const MobileMenu = ({ links, setIsOpen }) => (
           {link.name}
         </Link>
 
-        {/* Mobile Dropdown for Ministries */}
+
         {link.subMenu && (
           <div className="pl-8">
             {link.subMenu.map((sub) => (
