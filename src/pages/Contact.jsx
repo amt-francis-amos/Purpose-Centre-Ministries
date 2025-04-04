@@ -17,7 +17,6 @@ const staggerContainer = {
 const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-     
       <motion.div
         className="relative min-h-[300px] md:h-[470px] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${assets.contactImg})` }}
@@ -43,7 +42,6 @@ const Contact = () => {
         </motion.div>
       </motion.div>
 
-      
       <motion.div
         className="max-w-[1240px] mx-auto p-6 mt-20 text-gray-700"
         variants={staggerContainer}
@@ -65,7 +63,6 @@ const Contact = () => {
           />
         </div>
 
-      
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
           variants={fadeInUp}
@@ -89,7 +86,6 @@ const Contact = () => {
           </div>
         </motion.div>
 
-       
         <motion.div
           className="bg-white shadow-lg rounded-lg p-8 mt-16 max-w-3xl mx-auto"
           variants={fadeInUp}
@@ -124,7 +120,6 @@ const Contact = () => {
           </form>
         </motion.div>
 
-        
         <motion.div
           className="mt-16"
           initial={{ opacity: 0 }}
@@ -143,10 +138,12 @@ const Contact = () => {
 
           <div className="mt-10 w-full h-80 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0000000000005!2d-0.19000000000000003!3d5.550000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPurpose%20Centre%20Ministries!5e0!3m2!1sen!2sgh!4v1625864418167!5m2!1sen!2sgh"
+              className="w-full h-[400px] rounded-lg shadow-lg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127670.80564584038!2d-1.818539193518476!3d4.899978048774447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfddfbcf5a9b8b6f%3A0x6f9c8f0f3f9c9b0!2sTakoradi%2C%20Ghana!5e0!3m2!1sen!2sus!4v1625864418167!5m2!1sen!2sus"
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Map of Takoradi, Ghana"
             ></iframe>
           </div>
         </motion.div>
