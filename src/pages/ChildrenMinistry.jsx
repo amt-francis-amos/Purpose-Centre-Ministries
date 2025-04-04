@@ -2,13 +2,13 @@ import React from 'react'
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { assets } from "../assets/assets"; // make sure you have a childrenMinistryImg or add one
+import { assets } from "../assets/assets"; 
 import ScrollToTop from "../components/ScrollToTop";
 
 const ChildrenMinistry = () => {
   return (
     <div className="text-white w-full overflow-hidden">
-      {/* Hero Section */}
+      
       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center bg-black">
         <img
           src={assets.childrenMinistryImg}
@@ -40,7 +40,6 @@ const ChildrenMinistry = () => {
         </motion.div>
       </section>
 
-      {/* About Section */}
       <section className="py-16 px-4 bg-white text-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.h2
@@ -84,7 +83,7 @@ const ChildrenMinistry = () => {
         </div>
       </section>
 
-      {/* Values / Activities */}
+      
       <section className="py-16 bg-gray-100 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
