@@ -101,3 +101,44 @@ export const images = [
   ];
 
   
+
+
+    export const growthFocus = [
+      {
+        title: "Physical Growth",
+        desc: "To grow well in their physical outlook and personal hygiene. We believe people will see you before they hear you. (Stature)"
+      },
+      {
+        title: "Spiritual Strength",
+        desc: "To grow stronger in the spirit, intellect, and mind through biblical and spiritual exercises. (Wax strong in spirit)"
+      },
+      {
+        title: "Wisdom & Home Training",
+        desc: "To grow in the wisdom of God and basic home training. (Increase Wisdom)"
+      },
+      {
+        title: "Grace & Gifts",
+        desc: "To grow in their natural and spiritual grace and gifts. (Grace of God)"
+      },
+      {
+        title: "Obedience & Faith",
+        desc: "To increase in God's favour through obedience, love, and faith. (Favour with God)"
+      },
+      {
+        title: "Discipline & Impact",
+        desc: "To be disciplined and relevant in society and to impact their generation with their gifts, skills, knowledge, wisdom, and the love of God. (Favour with man)"
+      },
+      {
+        title: "Confidence",
+        desc: "To make them bold and confident without fear, timidity, and inferiority. (Wax Strong)"
+      }
+    ];
+  
+    export const values = [
+      "The purity of God’s Word",
+      "The Father’s teaching",
+      "Evidence-based scriptural education",
+      "Every child’s gift and uniqueness",
+      "Family participation in spiritual growth",
+      "Supporters of this mission",
+    ];
