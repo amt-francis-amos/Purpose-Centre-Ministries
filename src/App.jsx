@@ -12,6 +12,9 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import MembershipForm from './pages/MembershipForm';
 import ChildrenMinistry from './pages/ChildrenMinistry';
+import WomenMinistry from './pages/WomenMinistry';
+import YouthMinistry from './pages/YouthMinistry';
+import MenMinistry from './pages/MenMinistry';
 
 const App = () => {
   return (
@@ -27,6 +30,9 @@ const App = () => {
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/virtual" element={<VirtualChurch />} />
           <Route path="/children-ministry" element={<ChildrenMinistry />} />
+          <Route path="/women-ministry" element={<WomenMinistry />} />
+          <Route path="/youth-ministry" element={<YouthMinistry />} />
+          <Route path="/men-ministry" element={<MenMinistry />} />
           <Route path="/donation" element={<Donation />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
