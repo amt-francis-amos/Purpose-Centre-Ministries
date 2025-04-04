@@ -11,6 +11,7 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import MembershipForm from './pages/MembershipForm';
+import ChildrenMinistry from './pages/ChildrenMinistry';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/membership" element={<MembershipForm />} />
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/virtual" element={<VirtualChurch />} />
+          <Route path="/children" element={<ChildrenMinistry />} />
           <Route path="/donation" element={<Donation />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />

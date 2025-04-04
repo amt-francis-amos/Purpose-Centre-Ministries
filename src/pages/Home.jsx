@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div className="text-white w-full overflow-x-hidden">
-      {/* Hero Section */}
+      
       <section className="relative min-h-[500px] md:min-h-screen flex items-center justify-center w-full overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <motion.img
@@ -71,7 +71,7 @@ const Home = () => {
         </motion.h2>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Vision Card */}
+        
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -100,7 +100,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Mission Card */}
+        
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
