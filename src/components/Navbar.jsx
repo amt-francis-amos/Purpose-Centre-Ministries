@@ -5,7 +5,6 @@ import { FaAngleDown } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { assets } from "../assets/assets";
 
-
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -14,6 +13,9 @@ const navLinks = [
     path: "/ministries",
     subMenu: [
       { name: "Children", path: "/children-ministry" },
+      { name: "Youth", path: "/youth-ministry" },
+      { name: "Women", path: "/women-ministry" },
+      { name: "Men", path: "/men-ministry" },
     ],
   },
   { name: "Gallery", path: "/gallery" },
@@ -28,7 +30,6 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
   const location = useLocation();
 
- 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -46,7 +47,6 @@ const Navbar = () => {
           <img className="w-[160px]" src={assets.logo} alt="Church Logo" />
         </Link>
 
-      
         <div className="hidden md:flex flex-1 justify-center space-x-8">
           {navLinks.map((link) =>
             link.name === "Ministries" ? (
@@ -80,7 +80,7 @@ const Navbar = () => {
                 </div>
 
                 {dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg z-50">
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50">
                     {link.subMenu.map((subItem) => (
                       <Link
                         key={subItem.name}
@@ -95,7 +95,11 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <NavItem key={link.name} link={link} isActive={location.pathname === link.path} />
+              <NavItem
+                key={link.name}
+                link={link}
+                isActive={location.pathname === link.path}
+              />
             )
           )}
         </div>
@@ -109,7 +113,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-    
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <FaTimes className="text-2xl text-[#6C5332]" />
@@ -153,7 +156,7 @@ const MobileMenu = ({ links, setIsOpen }) => (
         >
           {link.name}
         </Link>
-    
+
         {link.subMenu && (
           <div className="pl-8">
             {link.subMenu.map((sub) => (
