@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { assets, ministries } from "../assets/assets";
+import { ministries } from "../assets/assets";
 
 const MinistryCard = () => {
   return (
     <section className="py-20 bg-gray-100 text-center">
-    
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +15,6 @@ const MinistryCard = () => {
         <span className="block w-20 h-1 bg-[#D4AF37] mt-2 mx-auto"></span>
       </motion.h2>
 
-      
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,13 +22,14 @@ const MinistryCard = () => {
         viewport={{ once: true }}
         className="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed"
       >
-        The church is organized into **four key ministries**: 
-        <span className="text-[#6C5332] font-semibold"> Men’s Ministry, Women’s Ministry, Youth Ministry,</span> 
-        and <span className="text-[#6C5332] font-semibold">Children’s Ministry.</span>  
-        Each ministry is dedicated to **spiritual growth, fellowship, and service** to the community.
+        The church is organized into <strong>four key ministries</strong>:{" "}
+        <span className="text-[#6C5332] font-semibold">Men’s Ministry</span>,{" "}
+        <span className="text-[#6C5332] font-semibold">Women’s Ministry</span>,{" "}
+        <span className="text-[#6C5332] font-semibold">Youth Ministry</span>, and{" "}
+        <span className="text-[#6C5332] font-semibold">Children’s Ministry</span>.{" "}
+        Each ministry is dedicated to <strong>spiritual growth, fellowship, and service</strong> to the community.
       </motion.p>
 
-     
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 max-w-7xl mx-auto mt-12">
         {ministries.map((ministry, index) => (
           <motion.div
