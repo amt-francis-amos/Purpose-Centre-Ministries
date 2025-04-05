@@ -73,7 +73,7 @@ const MembershipForm = () => {
               type="text"
               {...register("fullName", { required: "Full Name is required" })}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-              placeholder="John Doe"
+              placeholder="Please Enter Your Name"
             />
             {errors.fullName && (
               <p className="text-red-500 text-sm">{errors.fullName.message}</p>
@@ -87,7 +87,7 @@ const MembershipForm = () => {
               type="email"
               {...register("email", { required: "Email is required" })}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-              placeholder="john@example.com"
+              placeholder="Please Enter Your Email"
             />
             {errors.email && (
               <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -101,7 +101,7 @@ const MembershipForm = () => {
               type="tel"
               {...register("phone", { required: "Phone number is required" })}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-              placeholder="+233 555 123 456"
+              placeholder="Please Enter Your Phone Number"
             />
             {errors.phone && (
               <p className="text-red-500 text-sm">{errors.phone.message}</p>
@@ -144,7 +144,7 @@ const MembershipForm = () => {
               type="text"
               {...register("address", { required: "Address is required" })}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md"
-              placeholder="123 Church St, Accra"
+              placeholder="Let Us Know Where You Are"
             />
             {errors.address && (
               <p className="text-red-500 text-sm">{errors.address.message}</p>
