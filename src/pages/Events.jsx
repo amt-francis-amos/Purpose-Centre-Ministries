@@ -36,7 +36,7 @@ const Events = () => {
     <div className="min-h-screen bg-gray-100">
       
       <motion.div
-        className="relative min-h-[300px] md:h-[470px] w-full bg-cover bg-center"
+        className="relative min-h-[300px] md:h-[470px] w-full bg-cover bg-fixed bg-center"
         style={{ backgroundImage: `url(${assets.eventImg})` }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
