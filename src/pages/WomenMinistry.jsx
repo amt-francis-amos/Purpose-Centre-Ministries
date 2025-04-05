@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { coreValues } from "../assets/assets";
+import { assets,coreValues } from "../assets/assets";
 
 
 
@@ -11,8 +10,9 @@ const WomenMinistry = () => {
 
       <div
         className="bg-cover bg-center h-[80vh] flex items-center justify-center text-white"
-        style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?worship,women')" }}
+        style={{ backgroundImage: `url(${assets.womenMinistryImg})` }}
       >
+        
         <motion.div
           className="text-center px-4"
           initial={{ opacity: 0, y: -30 }}
