@@ -178,3 +178,38 @@ export const images = [
           "God desires our best, not perfectionism. We minister to women in their uniqueness, encouraging a deeper relationship with Jesus."
       }
     ];
+
+
+
+    export const menValues = [
+      {
+        title: "Word of God",
+        description:
+          "We believe in the power and absolute truth of God’s Word. Anointed teaching, personal study, and meditation renew the mind and transform lives. (II Tim. 3:16-17, Romans 12:1-2, I Peter 1:22-23, Hebrews 4:12)",
+      },
+      {
+        title: "Healing the Wounded Family",
+        description:
+          "We believe that the church is called to bring healing to the wounded family. This includes strengthening marriages, encouraging parents, recovering from divorce, and ministering to singles, children, and the youth. (Genesis 12:3, Ephesians 5:21-23)",
+      },
+      {
+        title: "Community",
+        description:
+          "We believe that the larger community is our responsibility. The church is called to heal the brokenhearted and set captives free in the power of the Holy Spirit through prayer, counseling, and supportive relationships. (Matthew 5:35-42, Luke 4:18, Acts 4:29-30)",
+      },
+      {
+        title: "Excellence",
+        description:
+          "We believe that biblical excellence honors God and inspires people. We work with strategic focus, evaluate our actions, and always strive to do the very best with what God has given. (Daniel 5:12, Philippians 1:10)",
+      },
+      {
+        title: "Relationships",
+        description:
+          "People matter to God and to us. Genuine relationships permeate every part of church life as we commit to one another and team ministry. (John 13:34-35, Ephesians 4:16, Nehemiah 3)",
+      },
+      {
+        title: "Character",
+        description:
+          "We are called to live a life of character, including honesty, integrity, humility, meekness, self-discipline, teaching ability, perseverance, and a heart of service. (Luke 5:30-32, Matthew 18:14)",
+      },
+    ]
